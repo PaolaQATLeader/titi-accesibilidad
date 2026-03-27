@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector Accesible Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <main class="app-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">📖</div>
+                <h2>Titi</h2>
+            </div>
+            
+            <div class="card-control">
+                <label class="control-label">Documento</label>
+                <label for="subirArchivo" class="btn-upload">
+                    <span>📄 Subir archivo (.txt, .pdf)</span>
+                </label>
+                <input type="file" id="subirArchivo" accept=".txt, .pdf" style="display: none;">
+                <span id="nombreArchivo" class="file-name">Sin documento</span>
+            </div>
+
+            <div class="card-control">
+                <label for="selectVoces" class="control-label">Voz del Asistente</label>
+                <div class="select-wrapper">
+                    <select id="selectVoces" class="custom-select"></select>
+                </div>
+            </div>
+
+            <div class="card-control">
+                <div class="slider-header">
+                    <label for="rangeVelocidad" class="control-label">Velocidad</label>
+                    <span class="badge"><span id="valVelocidad">0.9</span>x</span>
+                </div>
+                <input type="range" id="rangeVelocidad" class="custom-slider" min="0.5" max="2" step="0.1" value="0.9">
+            </div>
+
+            <div class="card-control">
+                <div class="slider-header">
+                    <label for="rangeTono" class="control-label">Tono</label>
+                    <span class="badge"><span id="valTono">1.0</span></span>
+                </div>
+                <input type="range" id="rangeTono" class="custom-slider" min="0" max="2" step="0.1" value="1">
+            </div>
+
+            <div class="visual-modes">
+                <label class="control-label">Modos de Accesibilidad</label>
+                <div class="toggle-group">
+                    <button class="btn-toggle" onclick="alternarModoDislexia()">Modo Dislexia</button>
+                    <button class="btn-toggle" onclick="alternarAltoContraste()">Contraste</button>
+                </div>
+            </div>
+        </aside>
+
+        <section class="main-content">
+            <header class="top-bar">
+                <div class="titles">
+                    <h1>Lector Inmersivo</h1>
+                    <span class="pro-badge">PRO</span>
+                </div>
+                <div class="actions">
+                    <button class="btn-primary play-btn" onclick="iniciarLecturaSincronizada()">
+                        <span class="icon">▶️</span> Iniciar Lectura
+                    </button>
+                    <button class="btn-secondary stop-btn" onclick="detenerLectura()">
+                        <span class="icon">⏹️</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="editor-container">
+                <textarea id="textoEntrada" placeholder="Escribe aquí, pega un texto o sube tu documento desde el menú lateral..."></textarea>
+                <div id="vistaLectura" class="vista-lectura hidden"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
