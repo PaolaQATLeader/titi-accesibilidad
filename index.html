@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lector Accesible Pro</title>
+    <title>Titi - Lector Inmersivo Pro</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4F46E5">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3131/3131614.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -79,12 +84,11 @@
             </header>
 
             <div class="editor-container">
-                <textarea id="textoEntrada" placeholder="Escribe aquí, pega un texto o sube tu documento desde el menú lateral..."></textarea>
+                <textarea id="textoEntrada" placeholder="Escribe aquí, pega un texto o sube tu documento..."></textarea>
                 <div id="vistaLectura" class="vista-lectura hidden"></div>
             </div>
         </section>
     </main>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "name": "Titi - Lector Accesible PRO",
+  "short_name": "Titi",
+  "description": "Lector inmersivo para democratizar el acceso a la información.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3131/3131614.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
